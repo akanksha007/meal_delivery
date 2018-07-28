@@ -1,0 +1,48 @@
+<h1>Random Lunch</h1>
+
+<h3>Suggested Restaurant for random Lunch</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @selected_restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.id %></td>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.address %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h4>Selected Employee</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Preference</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.address %></td>
+        <td><%= employee.preference %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

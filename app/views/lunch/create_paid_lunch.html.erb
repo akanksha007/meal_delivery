@@ -1,0 +1,41 @@
+<h1>Paid Lunch</h1>
+
+<h3>Suggested Restaurant for paid Lunch</h3>
+
+<% @selected_restaurants.each do  |restaurant_id, menu|%>
+  <% restaurant = fetch_restaurant(restaurant_id) %>
+  <h4>Restaurant details</h4>
+  <%= "Id: #{restaurant.id}" %>
+  <br>
+  <%= "Name: #{restaurant.name}" %>
+  <br>
+  <%= "Address: #{restaurant.address}" %>
+  <br>
+  <p> selected menu for the restaurant</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Tag</th>
+        <th>Price</th>
+        <th colspan="5"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% menu.each do |m| %>
+        <tr>
+          <td><%= m.id %></td>
+          <td><%= m.name %></td>
+          <td><%= m.tag %></td>
+          <td><%= m.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h5><%= "Total cost for lunch: #{@final_cost[restaurant_id]}"%></h5>
+<% end %>
+
+
