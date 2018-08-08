@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :menus
   resources :restaurants
   resources :employees
   get 'random_lunch', to: 'lunch#random_lunch'

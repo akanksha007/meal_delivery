@@ -88,3 +88,18 @@ Thus, in the backend, we need:
 Two api endpoints (one for enqueuing job and one for getting job status).
 A background job itself.
 A way of storing the status of the job.
+
+
+### Further Task
+1) From the "Assumptions & Improvements​", please implement (3) and (4) [for both random and paid lunches].
+    * Menu can now be added.
+    * Validation for paid lunch and random lunch is done.
+2) "Optimizations", please implement (1)
+    * Pagination has been done using kaminari gem.
+3) "save" button in both /random_lunch and /paid_lunch pages is broken
+    * Fixed it - It was not working as form was inside table element
+  https://stackoverflow.com/questions/5967564/form-inside-a-table
+4) There are no unit tests for Lunch controller, please add sufficient tests.
+    * Added test using rspec.
+5) The bulk of the logic around lunch matching is in the controller. Can you refactor it out of controllers and add proper unit testing
+    * Moved this to spec and added the necessary test cases.

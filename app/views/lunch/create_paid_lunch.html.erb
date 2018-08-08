@@ -2,7 +2,7 @@
 
 <h3>Suggested Restaurant for paid Lunch</h3>
 
-<% @selected_restaurants.each do  |restaurant_id, menu|%>
+<% @menu.each do  |restaurant_id, menu|%>
   <% restaurant = fetch_restaurant(restaurant_id) %>
   <h4>Restaurant details</h4>
   <%= "Id: #{restaurant.id}" %>
@@ -34,8 +34,6 @@
       <% end %>
     </tbody>
   </table>
-
-  <h5><%= "Total cost for lunch: #{@final_cost[restaurant_id]}"%></h5>
 <% end %>
 
 

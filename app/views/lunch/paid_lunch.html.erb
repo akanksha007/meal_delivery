@@ -2,35 +2,34 @@
 
 <h1>Paid Lunch</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Select Employee</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Preference</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
+<%= form_with(url: create_paid_lunch_path, local: true) do |form| %>
+  <table>
+    <thead>
+      <tr>
+        <th>Select Employee</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Preference</th>
+        <th colspan="5"></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <%= form_with(url: create_paid_lunch_path, local: true) do |form| %>
-      <% @employees.each do |employee| %>
-        <tr>
-          <td><%= check_box_tag('employee_ids[]', employee.id) %></td>
-          <td><%= employee.name %></td>
-          <td><%= employee.address %></td>
-          <td><%= employee.preference %></td>
-          <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        </tr>
-      <% end %>
-      <label>Price</label>
-      <%= form.number_field :price%>
-      <br>
-      <br>
-      <%= form.submit %>
-    <% end %>
-  </tbody>
-</table>
-
+    <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= check_box_tag('employee_ids[]', employee.id) %></td>
+            <td><%= employee.name %></td>
+            <td><%= employee.address %></td>
+            <td><%= employee.preference %></td>
+            <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+          </tr>
+        <% end %>
+        <label>Price</label>
+        <%= form.number_field :price%>
+        <br>
+        <br>
+    </tbody>
+  </table>
+  <%= form.submit %>
+<% end %>
 <br>
